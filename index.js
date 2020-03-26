@@ -18,7 +18,7 @@ async function main() {
     console.log(
       `Ref ${eventObj.ref} is not the default branch: ${defaultBranch}`
     );
-    return;
+    process.exit(0)
     //throw new NeutralExitError();
   }
 
@@ -83,6 +83,7 @@ function checkCommit(config, commits, version) {
     }
   }
   console.log(`No commit found for version: ${version}`);
+  process.exit(0)
   //throw new Error(`No commit found for version: ${version}`);
 }
 
@@ -116,7 +117,7 @@ async function createTag(dir, config, version) {
 
   if (tagExists) {
     console.log(`Tag already exists: ${tagName}`);
-    return;
+    process.exit(0)
     //throw new NeutralExitError();
   }
 
