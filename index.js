@@ -18,7 +18,8 @@ async function main() {
     console.log(
       `Ref ${eventObj.ref} is not the default branch: ${defaultBranch}`
     );
-    throw new NeutralExitError();
+    return;
+    //throw new NeutralExitError();
   }
 
   const commitPattern =
@@ -81,7 +82,8 @@ function checkCommit(config, commits, version) {
       return;
     }
   }
-  throw new Error(`No commit found for version: ${version}`);
+  console.log(`No commit found for version: ${version}`);
+  //throw new Error(`No commit found for version: ${version}`);
 }
 
 async function readJson(file) {
@@ -114,7 +116,8 @@ async function createTag(dir, config, version) {
 
   if (tagExists) {
     console.log(`Tag already exists: ${tagName}`);
-    throw new NeutralExitError();
+    return;
+    //throw new NeutralExitError();
   }
 
   const { name, email } = config.tagAuthor;
