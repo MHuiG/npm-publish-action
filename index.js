@@ -13,12 +13,12 @@ async function main() {
   const eventObj = await readJson(eventFile);
 
   const defaultBranch = getEnv("DEFAULT_BRANCH") || "master";
-
+/*
   if (eventObj.ref !== `refs/heads/${defaultBranch}`) {
     console.log(
       `Ref ${eventObj.ref} is not the default branch: ${defaultBranch}`
     );
-    process.exit(0)
+    process.exit(0)*/
     //throw new NeutralExitError();
   }
 
