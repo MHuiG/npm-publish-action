@@ -18,10 +18,10 @@ async function main() {
     console.log(
       `Ref ${eventObj.ref} is not the default branch: ${defaultBranch}`
     );
-    process.exit(0)*/
+    process.exit(0)
     //throw new NeutralExitError();
   }
-
+*/
   const commitPattern =
     getEnv("COMMIT_PATTERN") || "^(?:Release|Version) (\\S+)";
 
